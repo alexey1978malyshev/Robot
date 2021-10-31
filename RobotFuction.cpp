@@ -28,7 +28,7 @@ int botDirect(Robot bot1)
 	return bot1.direct;
 }
 
-void leftTurn(Robot bot1) {
+/*void leftTurn(Robot bot1) {
 	bot1.direct--;
 	bot1.countL++;
 	bot1.countR--;
@@ -56,4 +56,4 @@ void moveForvard(Robot bot1) {
 		bot1.countStep++;
 	}
 	
-}
+}*/
