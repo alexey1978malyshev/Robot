@@ -12,46 +12,46 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 					
-	int field[MASS1][MASS2]; //задаем матрицу поля для перемещений
+	int field[MASS1][MASS2]; //Г§Г Г¤Г ГҐГ¬ Г¬Г ГІГ°ГЁГ¶Гі ГЇГ®Г«Гї Г¤Г«Гї ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГ©
 
-	char prog[SIZE];			// входные данные - строка  чаров
+	char prog[SIZE];			// ГўГµГ®Г¤Г­Г»ГҐ Г¤Г Г­Г­Г»ГҐ - Г±ГІГ°Г®ГЄГ   Г·Г Г°Г®Гў
 	
 	Robot bot1;
-	bot1 = inputBot();		//задаем статовое положение робота
+	bot1 = inputBot();		//Г§Г Г¤Г ГҐГ¬ Г±ГІГ ГІГ®ГўГ®ГҐ ГЇГ®Г«Г®Г¦ГҐГ­ГЁГҐ Г°Г®ГЎГ®ГІГ 
 
-	cout << "Введите программу : ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі : ";
 
 	cin >> prog;
 
-	for (int i = 0; i < MASS1; i++) {			//заполняем матрицу нулями
+	for (int i = 0; i < MASS1; i++) {			//Г§Г ГЇГ®Г«Г­ГїГҐГ¬ Г¬Г ГІГ°ГЁГ¶Гі Г­ГіГ«ГїГ¬ГЁ
 		for (int j = 0; j < MASS2; j++) {
 			field[i][j] = 0;
 		}
 	}		
-		for (int k = 0; k < sizeof(prog); k++) {  //обход  массива входных данных  //.length()
+		for (int k = 0; k < sizeof(prog); k++) {  //Г®ГЎГµГ®Г¤  Г¬Г Г±Г±ГЁГўГ  ГўГµГ®Г¤Г­Г»Гµ Г¤Г Г­Г­Г»Гµ  //.length()
 			
 			if (field[bot1.i][bot1.j] == 0) {
 
 				if (prog[k] == 'L')
-				{								//поворот налево
+				{								//ГЇГ®ГўГ®Г°Г®ГІ Г­Г Г«ГҐГўГ®
 					bot1.direct--;
 					bot1.countL++;
 					bot1.countR--;
 				}
 				if (prog[k] == 'R') 
-				{								//поворот направо
+				{								//ГЇГ®ГўГ®Г°Г®ГІ Г­Г ГЇГ°Г ГўГ®
 					bot1.direct++;
 					bot1.countR++;
 					bot1.countL--;
 					}
-				if (prog[k] == 'S')					//шаг вперед
+				if (prog[k] == 'S')					//ГёГ ГЈ ГўГЇГҐГ°ГҐГ¤
 				{
 					if (bot1.direct == 0) {
 						bot1.i++;
 						bot1.countStep++;
 					}
 					if (bot1.direct == 1) {
-						bot1.j++;
+						bot1.j--;
 						bot1.countStep++;
 					}
 					if (bot1.direct == 2) {
@@ -59,7 +59,7 @@ int main()
 						bot1.countStep++;
 					}
 					if (bot1.direct == 3) {
-						bot1.j--;
+						bot1.j++;
 						bot1.countStep++;
 					}
 
@@ -81,7 +81,7 @@ int main()
 
 			if(hAr[i]==)
 	}
-	cout << "Количество шагов робота: ---|" << bot1.countStep << "|---" << endl;
+	cout << "ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГёГ ГЈГ®Гў Г°Г®ГЎГ®ГІГ : ---|" << bot1.countStep << "|---" << endl;
 
 	return 0;
 }
