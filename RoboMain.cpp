@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include "RoboFunc.h"
 
@@ -12,39 +12,39 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 					
-	int field[MASS1][MASS2]; //задаем матрицу поля для перемещений
+	int field[MASS1][MASS2]; //Р·Р°РґР°РµРј РјР°С‚СЂРёС†Сѓ РїРѕР»СЏ РґР»СЏ РїРµСЂРµРјРµС‰РµРЅРёР№
 
-	char prog[SIZE];			// входные данные - строка  чаров
+	char prog[SIZE];			// РІС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ - СЃС‚СЂРѕРєР°  С‡Р°СЂРѕРІ
 	
 	Robot bot1;
-	bot1 = inputBot();		//задаем статовое положение робота
+	bot1 = inputBot();		//Р·Р°РґР°РµРј СЃС‚Р°С‚РѕРІРѕРµ РїРѕР»РѕР¶РµРЅРёРµ СЂРѕР±РѕС‚Р°
 
-	cout << "Введите программу : ";
+	cout << "Р’РІРµРґРёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ : ";
 
 	cin >> prog;
 
-	for (int i = 0; i < MASS1; i++) {			//заполняем матрицу нулями
+	for (int i = 0; i < MASS1; i++) {			//Р·Р°РїРѕР»РЅСЏРµРј РјР°С‚СЂРёС†Сѓ РЅСѓР»СЏРјРё
 		for (int j = 0; j < MASS2; j++) {
 			field[i][j] = 0;
 		}
 	}		
-		for (int k = 0; k < sizeof(prog); k++) {  //обход  массива входных данных  //.length()
+		for (int k = 0; k < sizeof(prog); k++) {  //РѕР±С…РѕРґ  РјР°СЃСЃРёРІР° РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…  //.length()
 			
 			if (field[bot1.i][bot1.j] == 0) {
 
 				if (prog[k] == 'L')
-				{								//поворот налево
+				{								//РїРѕРІРѕСЂРѕС‚ РЅР°Р»РµРІРѕ
 					bot1.direct--;
 					bot1.countL++;
 					bot1.countR--;
 				}
 				if (prog[k] == 'R') 
-				{								//поворот направо
+				{								//РїРѕРІРѕСЂРѕС‚ РЅР°РїСЂР°РІРѕ
 					bot1.direct++;
 					bot1.countR++;
 					bot1.countL--;
 					}
-				if (prog[k] == 'S')					//шаг вперед
+				if (prog[k] == 'S')					//С€Р°Рі РІРїРµСЂРµРґ
 				{
 					if (bot1.direct == 0) {
 						bot1.i++;
@@ -81,7 +81,7 @@ int main()
 
 			if(hAr[i]==)
 	}
-	cout << "Количество шагов робота: ---|" << bot1.countStep << "|---" << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ СЂРѕР±РѕС‚Р°: ---|" << bot1.countStep << "|---" << endl;
 
 	return 0;
 }
