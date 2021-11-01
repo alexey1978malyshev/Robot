@@ -12,46 +12,46 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 					
-	int field[MASS1][MASS2]; //задаем матрицу поля для перемещений
+	int field[MASS1][MASS2]; //çàäàåì ìàòðèöó ïîëÿ äëÿ ïåðåìåùåíèé
 
-	char prog[SIZE];			// входные данные - строка  чаров
+	char prog[SIZE];			// âõîäíûå äàííûå - ñòðîêà  ÷àðîâ
 	
 	Robot bot1;
-	bot1 = inputBot();		//задаем статовое положение робота
+	bot1 = inputBot();		//çàäàåì ñòàòîâîå ïîëîæåíèå ðîáîòà
 
-	cout << "Введите программу : ";
+	cout << "Ââåäèòå ïðîãðàììó : ";
 
 	cin >> prog;
 
-	for (int i = 0; i < MASS1; i++) {			//заполняем матрицу нулями
+	for (int i = 0; i < MASS1; i++) {			//çàïîëíÿåì ìàòðèöó íóëÿìè
 		for (int j = 0; j < MASS2; j++) {
 			field[i][j] = 0;
 		}
 	}		
-		for (int k = 0; k < sizeof(prog); k++) {  //обход  массива входных данных  //.length()
+		for (int k = 0; k < sizeof(prog); k++) {  //îáõîä  ìàññèâà âõîäíûõ äàííûõ  //.length()
 			
 			if (field[bot1.i][bot1.j] == 0) {
 
 				if (prog[k] == 'L')
-				{								//поворот налево
+				{								//ïîâîðîò íàëåâî
 					bot1.direct--;
 					bot1.countL++;
 					bot1.countR--;
 				}
 				if (prog[k] == 'R') 
-				{								//поворот направо
+				{								//ïîâîðîò íàïðàâî
 					bot1.direct++;
 					bot1.countR++;
 					bot1.countL--;
 					}
-				if (prog[k] == 'S')					//шаг вперед
+				if (prog[k] == 'S')					//øàã âïåðåä
 				{
 					if (bot1.direct == 0) {
 						bot1.i++;
 						bot1.countStep++;
 					}
 					if (bot1.direct == 1) {
-						bot1.j++;
+						bot1.j--;
 						bot1.countStep++;
 					}
 					if (bot1.direct == 2) {
@@ -59,7 +59,7 @@ int main()
 						bot1.countStep++;
 					}
 					if (bot1.direct == 3) {
-						bot1.j--;
+						bot1.j++;
 						bot1.countStep++;
 					}
 
@@ -81,7 +81,7 @@ int main()
 
 			if(hAr[i]==)
 	}
-	cout << "Количество шагов робота: ---|" << bot1.countStep << "|---" << endl;
+	cout << "Êîëè÷åñòâî øàãîâ ðîáîòà: ---|" << bot1.countStep << "|---" << endl;
 
 	return 0;
 }
